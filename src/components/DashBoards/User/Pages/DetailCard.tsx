@@ -17,6 +17,7 @@ const DetailCard = () => {
   const [singleData, setSingleData] = React.useState<any>();
   const business: any = useAppSelector((state) => state.bizClient);
   const user: any = useAppSelector((state) => state.userData);
+  const navigate = useNavigate();
 
   const { id } = useParams();
   const URl = "https://giftcard-api.onrender.com";
@@ -99,6 +100,7 @@ const DetailCard = () => {
           Swal.showLoading();
         },
       });
+      navigate("/user-dashboard");
     },
     onError: (error: any) => {
       Swal.fire({
@@ -132,7 +134,8 @@ const DetailCard = () => {
                 fontSize: "13px",
                 color: "#9e9d9df8",
                 fontWeight: 600,
-              }}>
+              }}
+            >
               Cash Value
             </div>
             <div
@@ -142,14 +145,16 @@ const DetailCard = () => {
                 fontSize: "40px",
                 fontWeight: 600,
                 color: "#1f34ee7d",
-              }}>
+              }}
+            >
               ${singleData?.moneyWorth}
             </div>
           </Valuation>
           <Inputs2
             onClick={() => {
               setPay(true);
-            }}>
+            }}
+          >
             {" "}
             Purchase this card
           </Inputs2>
@@ -169,7 +174,8 @@ const DetailCard = () => {
                 <CancelPay
                   onClick={() => {
                     setPay(false);
-                  }}>
+                  }}
+                >
                   <MdCancel />
                 </CancelPay>
                 <UpPay>TEST MODE</UpPay>
