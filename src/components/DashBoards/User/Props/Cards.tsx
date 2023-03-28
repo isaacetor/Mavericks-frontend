@@ -18,7 +18,7 @@ const Card: React.FC<iCard> = ({ pic, busyname, amount, colour, code }) => {
       </Wave>
       <Up>
         <Amount>
-          $ <span>{amount} </span>
+          ₦ <span>{amount} </span>
         </Amount>
       </Up>
       <Mid>

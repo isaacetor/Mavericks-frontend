@@ -32,7 +32,7 @@ const SideNav = () => {
   return (
     <div>
       <Container dsp={show ? "flex" : "none"}>
-        <Logo>GIFTHAVEN</Logo>
+        <Logo>MaAVERICKS</Logo>
         <br />
         <br />
         <br />
@@ -46,7 +46,8 @@ const SideNav = () => {
               setLogout(true);
 
               navigate("/user-dashboard");
-            }}>
+            }}
+          >
             <NavBars
               pic={<HiHome />}
               routeName="Home"
@@ -64,7 +65,8 @@ const SideNav = () => {
               setLogout(true);
 
               navigate("/user-dashboard/profile");
-            }}>
+            }}
+          >
             <NavBars
               pic={<MdInsertChart />}
               routeName="My Profile"
@@ -81,7 +83,8 @@ const SideNav = () => {
               setNotify(true);
               setLogout(true);
               navigate("/user-dashboard/mycards");
-            }}>
+            }}
+          >
             <NavBars
               pic={<FaWallet />}
               routeName="My Gift Cards"
@@ -99,7 +102,8 @@ const SideNav = () => {
 
               setLogout(true);
               navigate("/user-dashboard/notify");
-            }}>
+            }}
+          >
             <NavBars
               pic={<HiBell />}
               routeName="Notifications"
@@ -120,7 +124,8 @@ const SideNav = () => {
             setLogout(false);
             dispatch(Userlogout());
             navigate("/");
-          }}>
+          }}
+        >
           <NavBars
             pic={<CiLogout />}
             routeName="Log Out"
