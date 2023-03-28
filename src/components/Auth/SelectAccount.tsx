@@ -6,6 +6,7 @@ import phone from "../../Assets/phone.png";
 import flower from "../../Assets/flower.svg";
 import business from "../../Assets/business.png";
 import user from "../../Assets/user.png";
+import Typewriter from "typewriter-effect";
 import { NavLink } from "react-router-dom";
 
 const SelectAccount = () => {
@@ -30,7 +31,24 @@ const SelectAccount = () => {
           />
           <h4>MAVERICK</h4>
           <h1>
-            Please Select <br /> Account Type
+            {/* Please Select <br /> Account Type */}
+            <Typewriter
+              options={{
+                loop: true,
+              }}
+              onInit={(typewriter: any) => {
+                typewriter
+                  .typeString("Please select..")
+                  .pauseFor(1000)
+                  .deleteAll()
+                  .start()
+
+                  .typeString("Account type")
+                  .pauseFor(1000)
+                  .deleteAll()
+                  .start();
+              }}
+            />
           </h1>
           <p>Please select account type to get started 🙂</p>
           <Img src={phone} alt="" />

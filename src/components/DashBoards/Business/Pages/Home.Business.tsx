@@ -80,9 +80,14 @@ const BusinessHome = () => {
                   Fund your wallet to be able to create gift cards
                 </LText1>
               </div>
-              <CardButton>Fund Wallet</CardButton>
+              <NavLink
+                to="/dashboard/wallet"
+                style={{ textDecoration: "none" }}
+              >
+                <CardButton>Fund Wallet</CardButton>
+              </NavLink>
             </CardComponent>
-            <CardComponent2>
+            {/* <CardComponent2>
               <CardImage2>
                 <img src={two} />
               </CardImage2>
@@ -93,7 +98,7 @@ const BusinessHome = () => {
                 </LText2>
               </div>
               <CardButton2>See Top Gift Cards</CardButton2>
-            </CardComponent2>
+            </CardComponent2> */}
           </Cards>
           <Pending>
             <div style={{ marginBottom: "10px" }}>Pending</div>
