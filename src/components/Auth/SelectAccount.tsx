@@ -63,7 +63,7 @@ const SelectAccount = () => {
             <Card color="#8246f3">
               <Text>
                 <h1>Login as a Business</h1>
-                <p>make giftcards people can shop with for your business</p>
+                <p>Create shop-able gift cards for your business.</p>
               </Text>
               <Image>
                 <img src={business} alt="" />
@@ -76,8 +76,8 @@ const SelectAccount = () => {
               <Text>
                 <h1>Login as a User</h1>
                 <p>
-                  Purchase giftcards from any business and shop at your
-                  favourite store
+                  Buy gift cards from any business to shop at your favorite
+                  store.
                 </p>
               </Text>
               <Image>
@@ -116,7 +116,7 @@ const Footer = styled.div`
 `;
 
 const Text = styled.div`
-  width: 70%;
+  width: 80%;
   height: 100%;
   color: #fff;
   display: flex;
@@ -125,7 +125,7 @@ const Text = styled.div`
 
   h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 500;
     margin-bottom: 10px;
   }
@@ -134,6 +134,10 @@ const Text = styled.div`
     font-size: 14px;
     width: 65%;
     font-weight: 300;
+
+    @media screen and (max-width: 768px) {
+      width: 80%;
+    }
   }
 `;
 
@@ -168,6 +172,12 @@ const Card = styled.div<{ color: string }>`
   @media screen and (max-width: 960px) {
     margin-left: 0px;
     width: 80%;
+    /* align-items: center; */
+  }
+  @media screen and (max-width: 760px) {
+    margin-left: 0px;
+    width: 90%;
+    /* align-items: center; */
   }
 
   :hover {
@@ -177,10 +187,13 @@ const Card = styled.div<{ color: string }>`
 `;
 
 const Right = styled.div`
+  /* width: 100%; */
   gap: 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
+
   h2 {
     margin-top: 60px;
     margin-left: 60px;
@@ -239,7 +252,10 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  overflow-x: hidden;
 
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   @media screen and (max-width: 960px) {
     display: block;
   }
@@ -259,10 +275,13 @@ const Left = styled.div`
   }
   h4 {
     color: white;
-    font-size: 21px;
-    font-family: Inria serif;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     margin-top: 30px;
+
+    @media screen and (max-width: 960px) {
+      font-size: 1.5rem;
+    }
   }
 
   h1 {
@@ -272,6 +291,7 @@ const Left = styled.div`
     margin-top: 50px;
     animation: typing 4s steps(20);
     white-space: nowrap;
+    line-height: 3rem;
     overflow: hidden;
 
     @media screen and (max-width: 960px) {
