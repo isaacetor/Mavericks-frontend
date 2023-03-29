@@ -157,7 +157,10 @@ const BusinessWallet = () => {
               />
               <h2>Process Withdrawal</h2>
               <p>Withdraw funds from wallet</p>
-              <AmountHold>{business?.Balance}</AmountHold>
+              <AmountHold>
+                20000
+                {/* {business?.Balance} */}
+              </AmountHold>
               <input
                 type="number"
                 placeholder="Enter amount to withdraw"
