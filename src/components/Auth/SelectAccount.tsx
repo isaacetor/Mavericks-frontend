@@ -29,7 +29,10 @@ const SelectAccount = () => {
               height: "360px",
             }}
           />
-          <h4>MAVERICK</h4>
+          <NavLink to="/" style={{ textDecoration: "none" }}>
+            <h4>MAVERICK</h4>
+          </NavLink>
+
           <h1>
             {/* Please Select <br /> Account Type */}
             <Typewriter
