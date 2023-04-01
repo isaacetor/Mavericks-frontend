@@ -16,6 +16,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
 import { createBizUser } from "../API/Endpoint";
+import Loading from "./Loading";
 
 const BizzSignUp = () => {
   const navigate = useNavigate();
@@ -51,9 +52,9 @@ const BizzSignUp = () => {
       console.log("user", myData);
       //   dispatch(login(myData.data));
       Swal.fire({
-        title: "registration succesful",
-        html: "redirecting to login",
-        timer: 1000,
+        title: "Registration succesful",
+        html: "redirecting you to login",
+        timer: 2000,
         timerProgressBar: true,
 
         willClose: () => {
@@ -73,6 +74,7 @@ const BizzSignUp = () => {
   return (
     <div>
       <Container>
+        {posting.isLoading ? <Loading /> : null}
         <Left>
           <img
             src={rstar}
@@ -372,6 +374,7 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  position: relative;
 
   @media screen and (max-width: 960px) {
     display: block;

@@ -15,6 +15,7 @@ import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
 import { LoginBizUser } from "../API/Endpoint";
 import { login } from "../Global/ReduxState";
+import Loading from "./Loading";
 
 const BizzLogin = () => {
   const navigate = useNavigate();
@@ -46,10 +47,10 @@ const BizzLogin = () => {
       dispatch(login(myData.data));
 
       Swal.fire({
+        icon: "success",
         title: "Login succesful",
         html: "Taking you to your dashboard",
-        timer: 1000,
-        timerProgressBar: true,
+        timer: 2000,
 
         didOpen: () => {
           Swal.showLoading();
@@ -80,6 +81,7 @@ const BizzLogin = () => {
   return (
     <div>
       <Container>
+        {posting.isLoading ? <Loading /> : null}
         <Left>
           <img
             src={rstar}
@@ -307,6 +309,7 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  position: relative;
 
   @media screen and (max-width: 960px) {
     display: block;

@@ -47,10 +47,10 @@ const Login = () => {
       dispatch(Userlogin(myData.data));
 
       Swal.fire({
+        icon: "success",
         title: "Login succesful",
         html: "Taking you to your dashboard",
-        timer: 1000,
-        timerProgressBar: true,
+        timer: 2000,
 
         didOpen: () => {
           Swal.showLoading();
@@ -155,6 +155,7 @@ const Login = () => {
             <input
               type="checkbox"
               style={{ width: "15px", height: "15px", background: "#f9f4ff" }}
+              required
             />
             <p
               style={{

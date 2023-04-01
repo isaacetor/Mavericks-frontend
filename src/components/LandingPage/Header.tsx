@@ -183,7 +183,6 @@ const Button2 = styled.button<{ color: string; bg: string }>`
   background-color: ${({ bg }) => bg};
   border: 0;
   color: ${({ color }) => color};
-  border: 1px solid blue;
   border-radius: 5px;
   font-weight: 600;
   margin-left: 40px;

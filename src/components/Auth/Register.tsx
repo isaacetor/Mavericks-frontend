@@ -16,6 +16,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
 import { createUser } from "../API/Endpoint";
+import Loading from "./Loading";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -54,7 +55,7 @@ const Signup = () => {
       Swal.fire({
         title: "User registered sucessfully",
         html: "redirecting to login",
-        timer: 1000,
+        timer: 2000,
         timerProgressBar: true,
 
         willClose: () => {
@@ -72,6 +73,7 @@ const Signup = () => {
   return (
     <div>
       <Container>
+        {posting.isLoading ? <Loading /> : null}
         <Left>
           <img
             src={rstar}
@@ -351,6 +353,7 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  position: relative;
 
   @media screen and (max-width: 960px) {
     display: block;
