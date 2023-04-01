@@ -14,7 +14,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { UseAppDispatch } from "../Global/Store";
 import { useMutation } from "@tanstack/react-query";
 import { LoginUser } from "../API/Endpoint";
-import { login, Userlogin } from "../Global/ReduxState";
+import { Userlogin } from "../Global/ReduxState";
+import Loading from "./Loading";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -78,6 +79,7 @@ const Login = () => {
   return (
     <div>
       <Container>
+        {posting.isLoading ? <Loading /> : null}
         <Left>
           <img
             src={rstar}
@@ -135,7 +137,11 @@ const Login = () => {
                 fontSize: "25px",
               }}
             />
-            <input {...register("password")} placeholder="Password" />
+            <input
+              {...register("password")}
+              placeholder="Password"
+              type="password"
+            />
             <span>{errors?.password && errors?.password?.message}</span>
           </Inputs>
           <Div
@@ -144,7 +150,8 @@ const Login = () => {
               marginLeft: "60px",
               marginTop: "20px",
               alignItems: "center",
-            }}>
+            }}
+          >
             <input
               type="checkbox"
               style={{ width: "15px", height: "15px", background: "#f9f4ff" }}
@@ -154,7 +161,8 @@ const Login = () => {
                 margin: "0",
                 marginLeft: "10px",
                 fontSize: "15px",
-              }}>
+              }}
+            >
               Always remember me
             </p>
           </Div>
@@ -250,6 +258,7 @@ const Inputs = styled.div`
   height: 55px;
   margin-bottom: 20px;
   margin-left: 60px;
+  overflow: hidden;
 
   @media screen and (max-width: 960px) {
     margin: 0;
@@ -264,6 +273,9 @@ const Inputs = styled.div`
     outline: none;
     background-color: transparent;
     margin-left: 7px;
+    color: #000000ce;
+    font-size: 15px;
+    padding-left: 10px;
 
     ::placeholder {
       color: silver;
